@@ -1,0 +1,43 @@
+rows loaded 21,611; dropped 87 very short (<15 words) and 1,766 exact-duplicate texts -> 19,758 analysis rows
+date range 2023-09-01 to 2026-07-29; median words 233; mean 405
+
+Product group share:
+ product_group
+Debt collection     34.9
+Credit reporting    28.8
+Other products      11.5
+Credit card         11.5
+Bank account         9.1
+Mortgage             4.1
+
+Medical-debt sub-product share: 26.6%  (n=5,257)
+
+Top issues:
+ Issue
+Attempts to collect debt not owed                                  2928
+Incorrect information on your report                               2168
+Improper use of your report                                        1992
+Problem with a company's investigation into an existing problem    1494
+Written notification about debt                                    1432
+Managing an account                                                1123
+False statements or representation                                  934
+Problem with a purchase shown on your statement                     843
+Took or threatened to take negative or legal action                 759
+Communication tactics                                               516
+
+Top companies:
+ Company
+Experian Information Solutions Inc.       1536
+TRANSUNION INTERMEDIATE HOLDINGS, INC.    1471
+EQUIFAX, INC.                             1385
+SYNCHRONY FINANCIAL                        816
+JPMORGAN CHASE & CO.                       483
+CAPITAL ONE FINANCIAL CORPORATION          453
+WELLS FARGO & COMPANY                      443
+BANK OF AMERICA, NATIONAL ASSOCIATION      424
+W&A Intermediate Co., LLC                  421
+CITIBANK, N.A.                             285
+saved 01_eda_overview.png
+saved 02_top_terms_overall.png
+
+Top 15 terms: consumer, information, credit, account, reporting, report, debt, agency, dollaramount, medical, payment, consumer reporting, dispute, financial, collection

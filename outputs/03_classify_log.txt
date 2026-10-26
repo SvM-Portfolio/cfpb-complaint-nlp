@@ -1,0 +1,92 @@
+
+======================================================================
+TASK: Product group
+======================================================================
+train=15,806 test=3,952; classes=6
+class balance (%): {'Debt collection': 34.9, 'Credit reporting': 28.8, 'Other products': 11.5, 'Credit card': 11.5, 'Bank account': 9.1, 'Mortgage': 4.1}
+            model         params  cv_macro_f1  cv_std  test_accuracy  test_macro_f1  test_weighted_f1
+Majority baseline             {}       0.0863  0.0000         0.3492         0.0863            0.1808
+           LogReg {'clf__C': 20}       0.8322  0.0047         0.8388         0.8305            0.8387
+        LinearSVC  {'clf__C': 1}       0.8322  0.0068         0.8376         0.8285            0.8374
+
+Best model on CV/test: LogReg
+
+                  precision    recall  f1-score   support
+
+    Bank account      0.782     0.839     0.810       360
+     Credit card      0.798     0.853     0.825       455
+Credit reporting      0.849     0.848     0.848      1139
+ Debt collection      0.873     0.859     0.866      1380
+        Mortgage      0.892     0.870     0.881       162
+  Other products      0.779     0.728     0.753       456
+
+        accuracy                          0.839      3952
+       macro avg      0.829     0.833     0.831      3952
+    weighted avg      0.839     0.839     0.839      3952
+
+saved 03_confusion_matrix_product.png
+  top terms [Bank account]: bank, funds, branch, deposited, debit, overdraft, money, banking, deposit, savings
+  top terms [Credit card]: card, credit card, capital, carecredit, synchrony, citi, barclays, discover, commenity, care credit
+  top terms [Credit reporting]: experian, report, equifax, transunion, reporting, accounts, credit report, late, inquiries, reported
+  top terms [Debt collection]: debt, collection, collections, collect, owe, billing, owed, company, agency, insurance
+  top terms [Mortgage]: mortgage, foreclosure, home, loan, modification, house, escrow, forbearance, pennymac, loan modification
+  top terms [Other products]: loan, vehicle, repossession, finance, money, mohela, paypal, nelnet, loans, car
+
+======================================================================
+TASK: Issue group
+======================================================================
+train=15,806 test=3,952; classes=9
+class balance (%): {'Other issue': 34.6, 'Attempts to collect debt not owed': 14.8, 'Incorrect information on your report': 11.0, 'Improper use of your report': 10.1, "Problem with a company's investigation into an existing problem": 7.6, 'Written notification about debt': 7.2, 'Managing an account': 5.7, 'False statements or representation': 4.7, 'Problem with a purchase shown on your statement': 4.3}
+            model         params  cv_macro_f1  cv_std  test_accuracy  test_macro_f1  test_weighted_f1
+Majority baseline             {}       0.0572  0.0000         0.3464         0.0572            0.1782
+           LogReg {'clf__C': 20}       0.5964  0.0079         0.6483         0.6001            0.6476
+        LinearSVC  {'clf__C': 1}       0.5886  0.0083         0.6503         0.6017            0.6500
+
+Best model on CV/test: LinearSVC
+
+                                                                 precision    recall  f1-score   support
+
+                              Attempts to collect debt not owed      0.547     0.618     0.580       586
+                             False statements or representation      0.362     0.246     0.293       187
+                                    Improper use of your report      0.803     0.796     0.799       398
+                           Incorrect information on your report      0.615     0.634     0.624       434
+                                            Managing an account      0.612     0.618     0.615       225
+                                                    Other issue      0.774     0.712     0.742      1369
+Problem with a company's investigation into an existing problem      0.640     0.635     0.638       299
+                Problem with a purchase shown on your statement      0.597     0.804     0.685       168
+                                Written notification about debt      0.421     0.458     0.439       286
+
+                                                       accuracy                          0.650      3952
+                                                      macro avg      0.597     0.613     0.602      3952
+                                                   weighted avg      0.654     0.650     0.650      3952
+
+saved 04_confusion_matrix_issue.png
+  top terms [Attempts to collect debt not owed]: paid, debt, debt does, owe, collection, guarantor, company went, identity, visited, veteran
+  top terms [False statements or representation]: inaccurate, money owe, friday, right according, dollars, original, discrepancy, tried collect, insurance denied, company attempting
+  top terms [Improper use of your report]: inquiries, inquiry, companies, inquires, collections account, privacy, lenders, report account, fcra metro, certain
+  top terms [Incorrect information on your report]: reporting, report, date discovered, did open, experian, exposed, late payment, accounts, equifax, delinquent
+  top terms [Managing an account]: bank, deposit, access, branch, deposited, chime, savings, banking, debit, optum
+  top terms [Other issue]: loan, promotional, paypal, promotion, vehicle, close, application, repossession, foreclosure, mortgage
+  top terms [Problem with a company's investigation into a]: experian, equifax, report, disputes, dispute, remove, report violation, late, transunion, high balance
+  top terms [Problem with a purchase shown on your stateme]: dispute, charges, credit card, merchant, barclays, charge, refund, card company, hotel, card
+  top terms [Written notification about debt]: received, notice, right, notification, right dispute, validation, sent collection, verify, communication medical, proof debt
+
+======================================================================
+TASK: Medical-debt complaint detection (binary)
+======================================================================
+train=15,806 test=3,952; positive rate=26.6%; best C=5
+5-fold CV ROC-AUC (train): 0.9552
+TEST ROC-AUC=0.9644  PR-AUC(avg precision)=0.8869  accuracy=0.9059
+              precision    recall  f1-score   support
+
+       other      0.961     0.909     0.934      2900
+medical debt      0.781     0.897     0.835      1052
+
+    accuracy                          0.906      3952
+   macro avg      0.871     0.903     0.885      3952
+weighted avg      0.913     0.906     0.908      3952
+
+saved 05_roc_pr_medical_debt.png
+Top terms -> medical debt: debt, collection, collections, insurance, billing, medical debt, visit, hospital, received, medical data, patient, covered, agency, owed, payment plan
+Top terms -> other: card, loan, bank, experian, equifax, hardship, chase, inquiries, car, funds, transunion, late, issues, closed, mortgage
+saved 06_top_terms_by_product.png

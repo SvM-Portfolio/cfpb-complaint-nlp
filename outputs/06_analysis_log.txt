@@ -1,0 +1,211 @@
+n = 19,758
+
+== SENTIMENT ==
+VADER (mean sentence compound): mean=-0.061, median=-0.055; share < 0: 63.2%
+DistilBERT SST-2: share classified NEGATIVE = 98.6%; mean signed prob = -0.968
+Spearman correlation VADER vs DistilBERT: rho=0.261 (p=1.9e-304)
+Sign agreement (neg vs not-neg): 64.1%
+
+By theme:
+                                       n  vader  bert_neg_pct
+theme                                                        
+Dispute handling                    2391 -0.110        98.662
+Identity theft & fraud              1187 -0.092        99.073
+Medical billing & collections       8385 -0.088        98.998
+Account access & funds              2679 -0.069        99.365
+Payment hardship                    3591  0.010        97.382
+Templated statute-citation letters  1525  0.029        97.377
+Kruskal-Wallis across themes (VADER): H=1450.0, p=2.1e-311
+
+By segment:
+                                         n  vader  bert_neg_pct
+segment                                                        
+Medical-debt complaints               5257 -0.098        98.954
+Other medical-mentioning complaints  14501 -0.048        98.462
+Mann-Whitney medical-debt vs other (VADER): p=7.5e-69; mean diff=-0.049
+
+By product group:
+                     n  vader  bert_neg_pct
+product_group                              
+Bank account      1802 -0.107        99.334
+Credit card       2273 -0.010        98.856
+Credit reporting  5696 -0.024        97.735
+Debt collection   6901 -0.100        98.971
+Mortgage           809 -0.052        98.517
+Other products    2277 -0.056        98.770
+saved 09_sentiment_by_theme.png
+saved 10_sentiment_by_topic.png
+
+== TRENDS ==
+Complaints per quarter:
+ quarter
+2023Q3     536
+2023Q4    1382
+2024Q1    1711
+2024Q2    1457
+2024Q3    1371
+2024Q4    1564
+2025Q1    2277
+2025Q2    2244
+2025Q3    2383
+2025Q4    1790
+2026Q1    1369
+2026Q2    1402
+2026Q3     272
+
+Theme share by quarter (%):
+ theme    Account access & funds  Dispute handling  Identity theft & fraud  Medical billing & collections  Payment hardship  Templated statute-citation letters
+quarter                                                                                                                                                       
+2023Q3                     16.4               2.4                     5.8                           35.4              14.4                                25.6
+2023Q4                     16.1               3.9                     3.9                           36.0              22.4                                17.7
+2024Q1                     15.1               4.5                     5.0                           33.5              14.5                                27.3
+2024Q2                     14.5               4.5                     7.3                           40.2              17.4                                16.2
+2024Q3                     17.5               5.5                     8.2                           40.4              19.7                                 8.8
+2024Q4                     13.8               7.0                     9.7                           40.2              16.8                                12.7
+2025Q1                     11.4               6.7                    10.1                           51.3              17.4                                 3.1
+2025Q2                     10.8              10.8                     6.0                           53.8              17.6                                 1.0
+2025Q3                     11.6              13.9                     5.2                           49.2              19.3                                 0.8
+2025Q4                     13.1              19.9                     4.7                           43.0              18.8                                 0.4
+2026Q1                     14.2              28.6                     2.0                           35.7              19.4                                 0.1
+2026Q2                     14.3              31.0                     2.9                           33.0              18.7                                 0.1
+2026Q3                     12.5              32.7                     2.6                           31.2              21.0                                 0.0
+
+Medical-debt sub-product share by quarter (%):
+ quarter
+2023Q3    25.6
+2023Q4    24.7
+2024Q1    23.1
+2024Q2    26.4
+2024Q3    28.4
+2024Q4    25.0
+2025Q1    27.3
+2025Q2    29.3
+2025Q3    24.3
+2025Q4    26.7
+2026Q1    29.6
+2026Q2    28.5
+2026Q3    27.9
+
+Mean VADER by quarter:
+ quarter
+2023Q3   -0.021
+2023Q4   -0.026
+2024Q1   -0.016
+2024Q2   -0.031
+2024Q3   -0.047
+2024Q4   -0.073
+2025Q1   -0.052
+2025Q2   -0.063
+2025Q3   -0.081
+2025Q4   -0.104
+2026Q1   -0.092
+2026Q2   -0.090
+2026Q3   -0.081
+saved 11_trends_by_quarter.png
+
+== REPEAT-COMPLAINT ANALYSIS ==
+Overall: 29.5% of narratives contain explicit repeat-contact language (5,836 of 19,758)
+
+Repeat-language rate by theme:
+                                        n     k  repeat_pct  ci_lo  ci_hi
+theme                                                                   
+Account access & funds              2679  1134        42.3   40.5   44.2
+Dispute handling                    2391   868        36.3   34.4   38.3
+Payment hardship                    3591  1207        33.6   32.1   35.2
+Templated statute-citation letters  1525   424        27.8   25.6   30.1
+Medical billing & collections       8385  1941        23.1   22.3   24.1
+Identity theft & fraud              1187   262        22.1   19.8   24.5
+
+Repeat-language rate by product group:
+                      n     k  repeat_pct  ci_lo  ci_hi
+product_group                                         
+Mortgage           809   363        44.9   41.5   48.3
+Bank account      1802   701        38.9   36.7   41.2
+Credit card       2273   837        36.8   34.9   38.8
+Other products    2277   819        36.0   34.0   38.0
+Credit reporting  5696  1436        25.2   24.1   26.4
+Debt collection   6901  1680        24.3   23.3   25.4
+
+Repeat-language rate by company (>=250 complaints):
+                                           n    k  repeat_pct  ci_lo  ci_hi
+company_short                                                             
+Citibank, N.A.                          285  135        47.4   41.6   53.2
+Wells Fargo & Company                   443  178        40.2   35.7   44.8
+Jpmorgan Chase & Co.                    483  193        40.0   35.7   44.4
+Bank Of America, National Association   424  145        34.2   29.8   38.8
+Bread Financial Holdings, Inc.          261   83        31.8   26.4   37.7
+Capital One Financial                   453  138        30.5   26.4   34.9
+Synchrony Financial                     816  247        30.3   27.2   33.5
+Experian Information Solutions Inc.    1536  393        25.6   23.5   27.8
+Transunion                             1471  357        24.3   22.1   26.5
+Equifax                                1385  332        24.0   21.8   26.3
+W&A Intermediate Co.                    421   91        21.6   17.9   25.8
+Collection Management Holdings          256   54        21.1   16.5   26.5
+Chi-square test, repeat language differs across these companies: chi2=170.8, p=8e-31
+
+Mean VADER: repeat-language -0.069 vs other -0.058
+
+Share of complaints selecting 'Problem with a company's investigation into an existing problem' (company-level, >=250):
+                                           n  inv_pct
+company_short                                       
+Experian Information Solutions Inc.    1536     25.3
+Equifax                                1385     22.7
+Transunion                             1471     22.3
+Bread Financial Holdings, Inc.          261      5.0
+Capital One Financial                   453      4.6
+Citibank, N.A.                          285      4.6
+Collection Management Holdings          256      4.3
+Bank Of America, National Association   424      4.0
+W&A Intermediate Co.                    421      2.4
+Wells Fargo & Company                   443      2.3
+Synchrony Financial                     816      2.2
+Jpmorgan Chase & Co.                    483      1.7
+Overall share selecting that issue: 7.6%
+
+Top 10 company x issue pairs (repeat-issue hot spots):
+ company_short                        Issue                                                          
+Transunion                           Improper use of your report                                        542
+Experian Information Solutions Inc.  Improper use of your report                                        525
+Equifax                              Improper use of your report                                        489
+Experian Information Solutions Inc.  Incorrect information on your report                               469
+Transunion                           Incorrect information on your report                               464
+Equifax                              Incorrect information on your report                               451
+Experian Information Solutions Inc.  Problem with a company's investigation into an existing problem    389
+Transunion                           Problem with a company's investigation into an existing problem    328
+Equifax                              Problem with a company's investigation into an existing problem    315
+Synchrony Financial                  Fees or interest                                                   184
+saved 12_repeat_complaints.png
+
+== COMPANY RESPONSE BY THEME ==
+                                       n  relief_pct  explanation_pct
+theme                                                                
+Templated statute-citation letters  1525        43.1             56.8
+Identity theft & fraud              1187        31.9             67.1
+Account access & funds              2679        21.3             78.4
+Medical billing & collections       8385        21.2             77.4
+Dispute handling                    2391        16.3             82.9
+Payment hardship                    3591        16.3             81.8
+
+Response mix overall (%):
+ Company response to consumer
+Closed with explanation            76.8
+Closed with non-monetary relief    17.9
+Closed with monetary relief         4.2
+Untimely response                   1.1
+In progress                         0.0
+saved 13_relief_by_theme.png
+
+== HEALTHCARE FINANCING (CareCredit-style cards) ==
+Narratives mentioning CareCredit: 555 (2.8% of sample)
+Product: {'Credit card': 478, 'Debt collection': 34, 'Credit reporting': 25, 'Other products': 13, 'Bank account': 4, 'Mortgage': 1}
+Top issues:
+ Issue
+Fees or interest                                           139
+Problem with a purchase shown on your statement            128
+Advertising and marketing, including promotional offers     75
+Closing your account                                        37
+Other features, terms, or problems                          35
+Of these, 32.3% mention deferred / promotional / retroactive interest terms
+Mean VADER 0.075 vs overall -0.061; repeat-language 30.3% vs overall 29.5%
+
+Medical-debt complaints (n=5,257): 34.0% mention insurance; 16.2% say they never received a bill/notice; 2.7% mention surprise / out-of-network billing; 14.6% say they already paid the bill.

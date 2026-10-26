@@ -1,0 +1,33 @@
+TF-IDF matrix: (19758, 30000)
+{'k': 6, 'coherence_cv': np.float64(0.7066), 'recon_err': np.float64(136.123)}
+{'k': 8, 'coherence_cv': np.float64(0.693), 'recon_err': np.float64(135.625)}
+{'k': 10, 'coherence_cv': np.float64(0.6748), 'recon_err': np.float64(135.226)}
+{'k': 12, 'coherence_cv': np.float64(0.7032), 'recon_err': np.float64(134.872)}
+{'k': 14, 'coherence_cv': np.float64(0.6817), 'recon_err': np.float64(134.534)}
+{'k': 16, 'coherence_cv': np.float64(0.6733), 'recon_err': np.float64(134.247)}
+chosen K = 12
+
+TOPICS (top terms, share of complaints):
+[0] Bank/card account access, ATM & funds problems  (13.6%, n=2,679): bank, card, money, check, funds, phone, help, asked, pay, went, fraud, credit card
+[1] Template letter: privacy-statute citations  (3.1%, n=605): individual, section, privacy, means, code, opt, usc, shall, states, nonpublic, nonpublic personal, financial institution
+[2] Medical-debt validation & FCRA/FDCPA disputes  (18.9%, n=3,733): fcra, collection, validation, act, fdcpa, fair, reported, violation, medical debt, inaccurate, fair credit, credit act
+[3] Template letter: reinvestigation / reseller  (0.9%, n=184): reseller, reinvestigation, paragraph, shall, subparagraph, notice dispute, veteran, receives, receives notice, subsection, item, reinsertion
+[4] Template letter: data breach, remove accounts  (1.4%, n=269): remove credit, account number, code, right privacy, following accounts, delete account, delete, number delete, date inquiry, privacy, companies, inquiry
+[5] Template letter: end-user / resale of reports  (1.0%, n=200): user, end user, reselling, shall, purposes reselling, resold, resale, section title, paragraph, procures, prospective, users
+[6] Hospital & insurance billing sent to collections  (23.5%, n=4,652): insurance, collection, hospital, collections, sent, paid, owe, bills, owed, billing, letter, collect
+[7] Identity theft & fraudulent accounts  (6.0%, n=1,187): theft, identity theft, identity, accounts, fraudulent, opened, inquiries, fraud, result identity, theft fraud, appearing, aforementioned
+[8] Payment hardship: loans, mortgage, late payments  (18.2%, n=3,591): payments, payment, loan, late, mortgage, pay, hardship, balance, monthly, plan, paid, work
+[9] Dispute not properly reviewed / documentation ignored  (12.1%, n=2,391): despite, financial, documentation, regarding, dispute, review, matter, request, provided, resolution, provide, including
+[10] Template letter: furnisher duties  (0.5%, n=102): cra, cras, furnisher, section, duties, section section, learnmore, gov learnmore, gov, furnishers, sections, section duties
+[11] Template letter: consent / permissible purpose  (0.8%, n=165): election, paragraph, connection, procured, connection credit, shall, insurance transaction, subparagraph, computer similar, telephone computer, similar means, mail telephone
+
+THEME share (%):
+ theme
+Medical billing & collections         42.4
+Payment hardship                      18.2
+Account access & funds                13.6
+Dispute handling                      12.1
+Templated statute-citation letters     7.7
+Identity theft & fraud                 6.0
+saved 07_topic_prevalence.png
+saved 08_topic_top_terms.png

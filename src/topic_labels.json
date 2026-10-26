@@ -1,0 +1,14 @@
+{
+ "0": {"label": "Bank/card account access, ATM & funds problems", "theme": "Account access & funds"},
+ "1": {"label": "Template letter: privacy-statute citations", "theme": "Templated statute-citation letters"},
+ "2": {"label": "Medical-debt validation & FCRA/FDCPA disputes", "theme": "Medical billing & collections"},
+ "3": {"label": "Template letter: reinvestigation / reseller", "theme": "Templated statute-citation letters"},
+ "4": {"label": "Template letter: data breach, remove accounts", "theme": "Templated statute-citation letters"},
+ "5": {"label": "Template letter: end-user / resale of reports", "theme": "Templated statute-citation letters"},
+ "6": {"label": "Hospital & insurance billing sent to collections", "theme": "Medical billing & collections"},
+ "7": {"label": "Identity theft & fraudulent accounts", "theme": "Identity theft & fraud"},
+ "8": {"label": "Payment hardship: loans, mortgage, late payments", "theme": "Payment hardship"},
+ "9": {"label": "Dispute not properly reviewed / documentation ignored", "theme": "Dispute handling"},
+ "10": {"label": "Template letter: furnisher duties", "theme": "Templated statute-citation letters"},
+ "11": {"label": "Template letter: consent / permissible purpose", "theme": "Templated statute-citation letters"}
+}
